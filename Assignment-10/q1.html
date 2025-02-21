@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <script>
+        let numberToGuess =  Math.floor(Math.random() * 50) + 1;
+        let userGuess;
+        let isCorrect=false;
+
+        do {
+            userGuess = prompt("Guess a number between 1 and 50:");
+            if (userGuess === null) {
+                alert("Game canceled. Thank you for playing!");
+                break;
+            }
+            userGuess = parseInt(userGuess);
+            if (userGuess === numberToGuess) {
+                alert("Congratulations! You've guessed the correct number: " + numberToGuess);
+                isCorrect = true;
+            } else {
+                alert("Wrong guess! Try again.");
+            }
+        } while (!isCorrect);
+    </script>
+</body>
+</html>
